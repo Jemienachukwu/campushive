@@ -43,7 +43,7 @@ const Nav = () => {
         </Box>
       </Box>
       <Box>
-        <Button bg="#37352f" color="#fff">
+        <Button bg="#37352f" color="#fff" borderRadius="20px">
           Find Your Hive
         </Button>
       </Box>
