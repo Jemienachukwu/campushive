@@ -50,8 +50,8 @@ const Home = () => {
           h={{ base: "100px", md: "280px" }}
         >
           <Box
-            h={{ base: "60px", md: "120px" }}
-            w={{ base: "60px", md: "120px" }}
+            h={{ base: "80px", md: "120px" }}
+            w={{ base: "80px", md: "120px" }}
             position="relative"
             top={{ base: "70px", md: "200px" }}
             left="40px"
@@ -60,41 +60,48 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
-      <Box mt="8" px="9">
-        <Text fontSize="4xl" as="b" my="4">
+      <Box mt="85px" px={{ base: "24px", md: "80px" }}>
+        <Text fontSize="4xl" as="b">
           Campushive
         </Text>
         <Box>
           {card.map((item, i) => (
             <Flex
-              my="120px"
+              my={{ base: "34px", md: "120px" }}
               flexDirection={{
                 base: i % 2 === 0 ? "column" : "column-reverse",
                 md: i % 2 === 0 ? "row" : "row-reverse",
               }}
-              justifyContent="space-evenly"
+              justifyContent="space-between"
               key={i}
             >
               <Box w={{ base: "95%", md: "40%" }} my="5">
                 <Text fontSize="3xl" as="b" color="#37352f">
                   {item.title}
                 </Text>
+                <br />
+                <br />
                 <Text color="#37352f">{item.content}</Text>
                 {i === 0 && (
                   <Link to="/clubs-orgs">
-                    <Box mt="80px" bg="#e6e6e5" p="5" w="fit-content">
+                    <Box
+                      my="80px"
+                      bg="#e6e6e5"
+                      p="5"
+                      w={{ base: "100%", md: "fit-content" }}
+                    >
                       ✅ Find your hive! →
                     </Box>
                   </Link>
                 )}
               </Box>
-              <Box w={{ base: "95%", md: "40%" }} h="full">
+              <Box w={{ base: "95%", md: "40%" }} h="full" my="60px">
                 <Image borderRadius="10px" src={item.img} alt="img" />
               </Box>
             </Flex>
           ))}
         </Box>
-        <Box px={{ base: "0", md: "8" }}>
+        <Box>
           <Text fontSize="3xl" as="b">
             This is For You If...
           </Text>
