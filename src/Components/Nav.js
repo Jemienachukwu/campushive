@@ -4,6 +4,7 @@ import {
   Spacer,
   Button,
   IconButton,
+  Image,
   useDisclosure,
 } from "@chakra-ui/react";
 import { FiMenu } from "react-icons/fi";
@@ -16,13 +17,24 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 
+import logo from "../assets/Frame_1 (3).avif";
 const Nav = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Flex p={4} alignItems="center">
-      <Box fontWeight="bold" fontSize="xs">
-        <Link to="/">Campushive</Link>
+    <Flex
+      p={4}
+      alignItems="center"
+      position="sticky"
+      top="0"
+      zIndex="1"
+      bg="#fff"
+      h="fit-content"
+    >
+      <Box>
+        <Link to="/">
+          <Image src={logo} alt="logo" h="18px" />
+        </Link>
       </Box>
       <Spacer />
       <Box display={{ base: "none", md: "flex" }}>

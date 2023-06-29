@@ -1,15 +1,30 @@
 import React from "react";
 import Nav from "../Components/Nav";
-import { Box, Container, Flex, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Flex,
+  Image,
+  Text,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  Input,
+  Button,
+} from "@chakra-ui/react";
 import campushive from "../assets/campushive-icon.jpeg";
 import banner from "../assets/LandingPageBanner-_1_.jpeg";
 import body from "../assets/body-1.jpeg";
 import idan from "../assets/idan.jpeg";
 import impact from "../assets/impact.jpeg";
 import front from "../assets/front-banner.jpeg";
+import four from "../assets/4.jpeg";
 import { Link } from "react-router-dom";
-import Events from "../Components/Events";
-
+import EventComp from "../Components/EventsComponent";
+import mail from "../assets/mail.avif";
+import { IoMdArrowDropright, IoMdArrowDropdown } from "react-icons/io";
+import Footer from "../Components/Footer";
 const Home = () => {
   const card = [
     {
@@ -171,8 +186,146 @@ const Home = () => {
         </Box>
       </Box>
 
-      <Box>
-        <Events />
+      <Box px={{ base: "24px", md: "80px" }} my="8">
+        <Text fontSize="3xl" as="b">
+          Events This Month
+        </Text>
+        <Box borderLeft="2px solid #000" p="3" fontSize="xl">
+          See all upcoming events coming up this month here
+        </Box>
+        <EventComp />
+      </Box>
+      <Flex
+        px={{ base: "24px", md: "80px" }}
+        my="8"
+        justifyContent={{ base: "center", md: "space-evenly" }}
+        direction={{ base: "column", md: "row" }}
+      >
+        <Box w={{ base: "90%", md: "60%" }} my="8">
+          <Text>★★★★★ 4.9</Text>
+          <Text fontSize="3xl">
+            CampusHive made finding clubs on campus a breeze. I wish I had known
+            about it sooner!
+          </Text>
+          <Box>
+            IDAN
+            <br />
+            Student, Federal University Of Technology.
+          </Box>
+        </Box>
+        <Box h="300px" w="300px">
+          <Image src={four} alt="img" borderRadius="50%" />
+        </Box>
+      </Flex>
+      <Box px={{ base: "24px", md: "80px" }} my="8">
+        <Text fontSize="3xl" as="b">
+          FAQs
+        </Text>
+        <Accordion defaultIndex={[0]} allowMultiple fontSize="md" my="8">
+          <AccordionItem border="none">
+            {({ isExpanded }) => (
+              <>
+                <h2>
+                  <AccordionButton>
+                    {isExpanded ? (
+                      <IoMdArrowDropdown />
+                    ) : (
+                      <IoMdArrowDropright />
+                    )}
+
+                    <Box as="span" flex="1" textAlign="left">
+                      Can anyone join CampusHive?
+                    </Box>
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  Absolutely! All students, club presidents, and other members
+                  of the campus community are welcome to join CampusHive. You
+                  may join CampusHive whether you're a first-year or graduate
+                  student to learn about, interact with, and participate in the
+                  many clubs and organizations on campus.
+                </AccordionPanel>
+              </>
+            )}
+          </AccordionItem>
+
+          <AccordionItem border="none">
+            {({ isExpanded }) => (
+              <>
+                <h2>
+                  <AccordionButton>
+                    {isExpanded ? (
+                      <IoMdArrowDropdown />
+                    ) : (
+                      <IoMdArrowDropright />
+                    )}
+                    <Box as="span" flex="1" textAlign="left">
+                      Is it FREE?
+                    </Box>
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  Yes, joining and using CampusHive are totally free. We support
+                  giving all students equitable chances to discover their
+                  passions, form relationships, and benefit from their time on
+                  campus. There are no additional costs or subscription fees;
+                  this is how we make sure that everyone can access the
+                  information.
+                </AccordionPanel>
+              </>
+            )}
+          </AccordionItem>
+          <AccordionItem border="none">
+            {({ isExpanded }) => (
+              <>
+                <h2>
+                  <AccordionButton>
+                    {isExpanded ? (
+                      <IoMdArrowDropdown />
+                    ) : (
+                      <IoMdArrowDropright />
+                    )}
+                    <Box as="span" flex="1" textAlign="left">
+                      Can I use CampusHive to promote events?
+                    </Box>
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  Absolutely! Clubs, groups, and even individual individuals can
+                  advertise and post their events on CampusHive. You may use
+                  CampusHive to promote your event and reach a larger audience,
+                  whether it's a club meeting, workshop, or campus-wide event.
+                  It's an excellent method to interact with fellow students and
+                  generate excitement on campus.
+                </AccordionPanel>
+              </>
+            )}
+          </AccordionItem>
+        </Accordion>
+        <Flex
+          my="8"
+          justifyContent={{ base: "center", md: "space-between" }}
+          direction={{ base: "column", md: "row" }}
+        >
+          <Box fontSize="3xl" w={{ base: "90%", md: "50%" }}>
+            Get Updates On The Latest Clubs and Events on Campus Based On Your{" "}
+            <Box as="span" bg="rgba(255, 0, 0, 0.1)" borderRadius="5px">
+              Interests
+            </Box>
+            <Input type="email" placeholder="email@address.com" />
+            <Button bg="#000" color="#fff" mt="70px">
+              Sign up →
+            </Button>
+          </Box>
+
+          <Box w={{ base: "90%", md: "45%" }}>
+            <Image src={mail} alt="img" />
+          </Box>
+        </Flex>
+      </Box>
+
+      <Box h="200px">
+        <Footer />
       </Box>
     </div>
   );
