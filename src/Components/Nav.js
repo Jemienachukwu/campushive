@@ -51,12 +51,12 @@ const Nav = () => {
           <Link to="/blogs">Blogs</Link>
         </Box>
         <Box mx={4}>
-          <Link to="/events">Why Join A Community ?</Link>
+          <Link to="/why-join-a-commmunity">Why Join A Community ?</Link>
         </Box>
       </Box>
       <Box>
         <Button bg="#37352f" color="#fff" borderRadius="20px">
-          Find Your Hive
+          <Link to="/clubs-orgs">Find Your Hive</Link>
         </Button>
       </Box>
       <Box display={{ base: "block", md: "none" }}>
