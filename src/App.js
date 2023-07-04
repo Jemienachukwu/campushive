@@ -31,7 +31,7 @@ const App = () => {
           <Route path="/clubs-orgs" element={<Clubs />} />
         </Routes>
         <Routes>
-          <Route path="/clubs-orgs:hive" element={<Hives />} />
+          <Route path="/clubs-orgs/:hive/:id" element={<Hives />} />
         </Routes>
       </Router>
     </div>
